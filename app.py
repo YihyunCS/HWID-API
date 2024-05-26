@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Dictionary to store registered HWIDs
+# store registered HWIDs
 registered_hwids = {}
 
 @app.route('/register', methods=['POST'])
