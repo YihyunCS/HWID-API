@@ -7,6 +7,7 @@ HWID lock your software for free
 - Register HWIDs for specific software
 - Verify registered HWIDs
 - List all registered HWIDs
+-Added a duration parameter to the /register endpoint. (V1.0.1
 
 ### Prerequisites
 
@@ -22,6 +23,18 @@ Click on the "New Project" button.
 Select the Git provider where your repository is hosted (e.g., GitHub).
 Import the repository you just pushed.
 Follow the prompts to configure and deploy your project.
+
+
+### Patch Notes (Version 1.0.1)
+
+- Added a duration parameter to the /register endpoint.
+- This parameter allows you to specify how long an HWID will remain registered.
+- The duration is specified in days.
+Example usage:
+curl -X POST https://<your-vercel-app>.vercel.app/register -H "Content-Type: application/json" -d '{"hwid":"YOUR_HWID","softwareId":"YOUR_SOFTWARE_ID","duration":"30"}'
+
+- During verification, the system checks if the HWID has expired.
+- If the HWID is expired, it will not be verified and an appropriate message will be returned.
 
 ### Usage
 
